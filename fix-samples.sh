@@ -1,26 +1,15 @@
-mkdir samples
-mkdir samples/animals/
-mkdir samples/countries/
-mkdir samples/movies/
+cd samples/animals/
+mv countries/ ../
 
-ANIMALS=('Apes' 'Elephants' 'Elephant babies' 'Monkeys' 'apes' '.apes')
-COUNTRIES=('Denmark' 'Sweden' 'USA' 'France' 'Italy' 'North Korea')
-MOVIES=('Batman' 'Sex And The City' 'JFK' 'Poltergeist' 'Germany')
+cd ..
+cd countries/
+mv movies/ ../
 
-cd samples/animals
-for id in "${ANIMALS[@]}"
-do
-echo "$id" >> "$id.txt"
-done
+cd ..
+cd ..
+cd samples/animals/
+mv Monkies.txt Monkeys.txt
 
-cd ../countries
-for id in "${COUNTRIES[@]}"
-do
-echo "$id" >> "$id.txt"
-done
-
-cd ../movies
-for id in "${MOVIES[@]}"
-do
-echo "$id" >> "$id.txt"
-done
+cd ..
+mv movies/Germany.txt countries/
+mv countries/.apes.txt animals/
